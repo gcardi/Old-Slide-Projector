@@ -6,7 +6,7 @@
 
 **Old Style Projector** is an FMX C++Builder application that simulates a vintage slide projector, complete with visual effects and sound.
 
-It requires [Anafestica](https://github.com/gcardi/Anafestica/) — a header-only library used to manage the persistence of application parameters such as settings and module paths.
+It requires [Anafestica](https://github.com/gcardi/Anafestica/), a header-only library used to manage the persistence of application parameters such as App-wide settings and Forms' position.
 
 ## Features
 
