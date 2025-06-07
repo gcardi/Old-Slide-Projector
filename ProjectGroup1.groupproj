@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{ABA30DAC-AA2E-4DAB-B52B-9B43C474FBDF}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="OldSchoolProjector.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TestOldSchoolProjector\TestOldSchoolProjector.cbproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="OldSchoolProjector">
+        <MSBuild Projects="OldSchoolProjector.cbproj"/>
+    </Target>
+    <Target Name="OldSchoolProjector:Clean">
+        <MSBuild Projects="OldSchoolProjector.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OldSchoolProjector:Make">
+        <MSBuild Projects="OldSchoolProjector.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestOldSchoolProjector">
+        <MSBuild Projects="TestOldSchoolProjector\TestOldSchoolProjector.cbproj"/>
+    </Target>
+    <Target Name="TestOldSchoolProjector:Clean">
+        <MSBuild Projects="TestOldSchoolProjector\TestOldSchoolProjector.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestOldSchoolProjector:Make">
+        <MSBuild Projects="TestOldSchoolProjector\TestOldSchoolProjector.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="OldSchoolProjector;TestOldSchoolProjector"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="OldSchoolProjector:Clean;TestOldSchoolProjector:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="OldSchoolProjector:Make;TestOldSchoolProjector:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

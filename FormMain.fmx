@@ -1,0 +1,429 @@
+inherited frmMain: TfrmMain
+  Caption = 'Display OEE'
+  ClientHeight = 461
+  ClientWidth = 548
+  StyleBook = dmStyleRes.StyleBook1
+  OnCloseQuery = FormCloseQuery
+  DesignerMasterStyle = 0
+  inherited tmrAutoStart: TTimer
+    Left = 144
+    Top = 80
+  end
+  inherited layoutMain: TLayout
+    Size.Width = 548.000000000000000000
+    Size.Height = 415.000000000000000000
+    TabOrder = 1
+    inherited Button1: TButton
+      Position.Y = 16.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+    end
+    inherited Button11: TButton
+      Position.Y = 56.000000000000000000
+      Size.Height = 30.000000000000000000
+    end
+    inherited Button2: TButton
+      Position.Y = 56.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+    end
+    inherited Button3: TButton
+      Position.Y = 56.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+    end
+    inherited Button5: TButton
+      Position.Y = 16.000000000000000000
+      Size.Height = 30.000000000000000000
+    end
+    inherited Button7: TButton
+      Position.Y = 16.000000000000000000
+      Size.Height = 30.000000000000000000
+    end
+    inherited comboboxPanelTopLeftScreen: TComboBox
+      Size.Width = 501.000000000000000000
+      Size.Height = 32.000000000000000000
+    end
+    inherited edtEventCode: TEdit
+      Size.Height = 32.000000000000000000
+    end
+    inherited Label1: TLabel
+      Position.Y = 179.000000000000000000
+      Size.Width = 45.000000000000000000
+      Size.Height = 19.000000000000000000
+    end
+    inherited Label3: TLabel
+      Action = nil
+    end
+    inherited Label8: TLabel
+      Action = nil
+    end
+    inherited Label9: TLabel
+      Action = nil
+      TabOrder = 18
+    end
+    inherited switchPanelClipping: TSwitch
+      Size.Width = 44.000000000000000000
+    end
+    inherited switchPanelKeepAspectRatio: TSwitch
+      Size.Width = 44.000000000000000000
+    end
+    inherited switchPanelScaling: TSwitch
+      Size.Width = 44.000000000000000000
+      TabOrder = 17
+    end
+    object tmrPolling: TTimer
+      Enabled = False
+      Interval = 60000
+      Left = 56
+      Top = 56
+    end
+    object Line1: TLine
+      Anchors = [akLeft, akTop, akBottom]
+      LineType = Left
+      Position.X = 336.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 9.000000000000000000
+      Size.Height = 398.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object Button4: TButton
+      Action = actPictureNext
+      ImageIndex = -1
+      Position.X = 296.000000000000000000
+      Position.Y = 328.000000000000000000
+      Size.Width = 137.000000000000000000
+      Size.Height = 65.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 20
+      TextSettings.Trimming = None
+    end
+    object Button6: TButton
+      Action = actPicturePrior
+      ImageIndex = -1
+      Position.X = 144.000000000000000000
+      Position.Y = 328.000000000000000000
+      Size.Width = 129.000000000000000000
+      Size.Height = 65.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 19
+      TextSettings.Trimming = None
+    end
+    object switchVignetting1: TSwitch
+      Action = actPanelVignetting
+      Position.X = 184.000000000000000000
+      Position.Y = 146.000000000000000000
+      Size.Width = 44.000000000000000000
+      Size.Height = 20.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 16
+    end
+    object Label2: TLabel
+      Position.X = 240.000000000000000000
+      Position.Y = 139.000000000000000000
+      Size.Width = 73.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Trimming = None
+      Text = 'Vignetting'
+      TabOrder = 23
+      OnClick = actPanelScalingExecute
+    end
+    object trackbarMechSndVol: TTrackBar
+      CanParentFocus = True
+      Orientation = Horizontal
+      Position.X = 328.000000000000000000
+      Position.Y = 21.000000000000000000
+      Size.Width = 108.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 24
+      Value = 50.000000000000000000
+      OnChange = trackbarMechSndVolChange
+    end
+    object Label4: TLabel
+      Position.X = 444.000000000000000000
+      Position.Y = 13.000000000000000000
+      Size.Width = 101.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Trimming = None
+      Text = 'Mechanism sound volume'
+      TabOrder = 21
+      OnClick = actPanelScalingExecute
+    end
+    object edtPicturesPath: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 25
+      Position.X = 24.000000000000000000
+      Position.Y = 265.000000000000000000
+      Size.Width = 265.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object Label5: TLabel
+      Action = actPanelScaling
+      Position.X = 24.000000000000000000
+      Position.Y = 236.000000000000000000
+      Size.Width = 129.000000000000000000
+      Size.Height = 33.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Trimming = None
+      Text = 'Pictures path'
+      TabOrder = 22
+    end
+    object switchRecursivePicturesSearch1: TSwitch
+      Action = actPanelRecursivePicturesSearch
+      Position.X = 353.000000000000000000
+      Position.Y = 273.000000000000000000
+      Size.Width = 44.000000000000000000
+      Size.Height = 20.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 26
+    end
+    object Label6: TLabel
+      Position.X = 405.000000000000000000
+      Position.Y = 258.000000000000000000
+      Size.Width = 120.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Recursive pictures search'
+      TabOrder = 27
+    end
+    object Button9: TButton
+      Action = actFileBrowsePicturesPath
+      StyledSettings = [Family, Style, FontColor]
+      ImageIndex = -1
+      Position.X = 296.000000000000000000
+      Position.Y = 265.000000000000000000
+      Size.Width = 32.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 28
+      Text = #8729#8729#8729
+      TextSettings.Font.Size = 16.000000000000000000
+      TextSettings.Trimming = None
+    end
+    object Label7: TLabel
+      Position.X = 444.000000000000000000
+      Position.Y = 90.000000000000000000
+      Size.Width = 96.000000000000000000
+      Size.Height = 41.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Fan noise volume'
+      TabOrder = 29
+    end
+    object switchFanNoise: TSwitch
+      Action = actPanelFanNoise
+      Position.X = 328.000000000000000000
+      Position.Y = 62.000000000000000000
+      Size.Width = 44.000000000000000000
+      Size.Height = 20.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 30
+    end
+    object Label10: TLabel
+      Position.X = 384.000000000000000000
+      Position.Y = 62.000000000000000000
+      Size.Width = 73.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Fan noise'
+      TabOrder = 31
+    end
+    object lblFileName: TLabel
+      Position.X = 24.000000000000000000
+      Position.Y = 314.000000000000000000
+      Size.Width = 497.000000000000000000
+      Size.Height = 23.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 32
+    end
+  end
+  inherited StatusBar1: TStatusBar
+    Position.Y = 439.000000000000000000
+    Size.Width = 548.000000000000000000
+    TabOrder = 3
+  end
+  inherited popupmenuTrayIcon: TPopupMenu
+    Left = 152
+    Top = 120
+  end
+  object MenuBar1: TMenuBar [4]
+    Size.Width = 548.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object MenuItem1: TMenuItem
+      Locked = True
+      Text = 'File'
+      object MenuItem2: TMenuItem
+        Action = actFileStart
+        Locked = True
+        ImageIndex = -1
+      end
+      object MenuItem3: TMenuItem
+        Action = actFileStop
+        Locked = True
+        ImageIndex = -1
+      end
+      object MenuItem4: TMenuItem
+        Locked = True
+        Text = '-'
+      end
+      object MenuItem5: TMenuItem
+        Action = actFileConfig
+        Locked = True
+        ImageIndex = -1
+      end
+      object MenuItem6: TMenuItem
+        Locked = True
+        Text = '-'
+      end
+      object MenuItem7: TMenuItem
+        Action = actFileExit
+        Locked = True
+        ImageIndex = -1
+      end
+    end
+    object MenuItem9: TMenuItem
+      Locked = True
+      Text = 'Panel'
+      object MenuItem10: TMenuItem
+        Action = actPanelShow
+        Locked = True
+        ImageIndex = -1
+      end
+      object MenuItem11: TMenuItem
+        Action = actPanelHide
+        Locked = True
+        ImageIndex = -1
+      end
+      object MenuItem12: TMenuItem
+        Locked = True
+        Text = '-'
+      end
+      object MenuItem13: TMenuItem
+        Action = actPanelMonoscope
+        Locked = True
+        ImageIndex = -1
+      end
+      object MenuItem16: TMenuItem
+        Locked = True
+        Text = '-'
+      end
+      object MenuItem17: TMenuItem
+        Action = actPanelClipping
+        Locked = True
+        ImageIndex = -1
+      end
+      object MenuItem18: TMenuItem
+        Action = actPanelScaling
+        Locked = True
+        ImageIndex = -1
+      end
+      object MenuItem19: TMenuItem
+        Action = actPanelKeepAspectRatio
+        Locked = True
+        ImageIndex = -1
+      end
+      object MenuItem34: TMenuItem
+        Action = actPanelAutoFit
+        Locked = True
+        ImageIndex = -1
+      end
+      object MenuItem14: TMenuItem
+        Locked = True
+        Text = '-'
+      end
+      object MenuItem15: TMenuItem
+        Action = actPicturePrior
+        Locked = True
+        ImageIndex = -1
+      end
+      object MenuItem20: TMenuItem
+        Action = actPictureNext
+        Locked = True
+        ImageIndex = -1
+      end
+      object MenuItem21: TMenuItem
+        Locked = True
+        Text = '-'
+      end
+      object MenuItem22: TMenuItem
+        Action = actPanelVignetting
+        Locked = True
+        ImageIndex = -1
+      end
+      object MenuItem38: TMenuItem
+        Action = actPanelFanNoise
+        Locked = True
+        ImageIndex = -1
+      end
+    end
+  end
+  object trackbarNoiseSndVol: TTrackBar [5]
+    CanParentFocus = True
+    Orientation = Horizontal
+    Position.X = 328.000000000000000000
+    Position.Y = 124.000000000000000000
+    Size.Width = 108.000000000000000000
+    Size.Height = 24.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    Value = 25.000000000000000000
+    OnChange = trackbarNoiseSndVolChange
+  end
+  inherited ActionList1: TActionList
+    Left = 120
+    Top = 96
+    object actPicturePrior: TAction
+      Category = 'Picture'
+      Text = 'Prior'
+      Hint = 'Prior|Previous picture'
+      OnExecute = actPicturePriorExecute
+      OnUpdate = actPicturePriorUpdate
+    end
+    object actPictureNext: TAction
+      Category = 'Picture'
+      Text = 'Next'
+      Hint = 'Next|Next picture'
+      OnExecute = actPictureNextExecute
+      OnUpdate = actPictureNextUpdate
+    end
+    object actPanelVignetting: TAction
+      Category = 'Panel'
+      AutoCheck = True
+      Text = 'Vignetting'
+      OnExecute = actPanelVignettingExecute
+      OnUpdate = actPanelVignettingUpdate
+    end
+    object actPanelRecursivePicturesSearch: TAction
+      Category = 'Panel'
+      AutoCheck = True
+      Text = 'actPanelRecursivePicturesSearch'
+      OnExecute = actPanelRecursivePicturesSearchExecute
+      OnUpdate = actPanelRecursivePicturesSearchUpdate
+    end
+    object actFileBrowsePicturesPath: TAction
+      Category = 'File'
+      Text = 'actFileBrowsePicturesPath'
+      OnExecute = actFileBrowsePicturesPathExecute
+      OnUpdate = actFileBrowsePicturesPathUpdate
+    end
+    object actPanelFanNoise: TAction
+      Category = 'Panel'
+      AutoCheck = True
+      Text = 'Fan noise'
+      OnExecute = actPanelFanNoiseExecute
+      OnUpdate = actPanelFanNoiseUpdate
+    end
+  end
+  object tmrChangeSoundVol: TTimer
+    Enabled = False
+    Interval = 200
+    OnTimer = tmrChangeSoundVolTimer
+    Left = 216
+    Top = 56
+  end
+end

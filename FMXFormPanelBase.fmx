@@ -1,0 +1,25 @@
+object frmPanelBase: TfrmPanelBase
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = None
+  ClientHeight = 1080
+  ClientWidth = 1920
+  Position = Designed
+  FormStyle = StayOnTop
+  FormFactor.Width = 1920
+  FormFactor.Height = 1080
+  FormFactor.Orientations = [Landscape]
+  FormFactor.Devices = [Desktop]
+  OnMouseDown = FormMouseDown
+  OnMouseMove = FormMouseMove
+  OnMouseUp = FormMouseUp
+  OnResize = FormResize
+  DesignerMasterStyle = 0
+  object layoutMain: TLayout
+    Size.Width = 1920.000000000000000000
+    Size.Height = 1080.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+  end
+end
